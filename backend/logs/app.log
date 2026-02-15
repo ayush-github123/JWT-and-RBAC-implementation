@@ -1,0 +1,71 @@
+2026-02-16 00:32:06,469 | INFO | uvicorn.error | server.py:84 | Started server process [578768]
+2026-02-16 00:32:06,470 | INFO | uvicorn.error | on.py:48 | Waiting for application startup.
+2026-02-16 00:32:06,500 | INFO | uvicorn.error | on.py:62 | Application startup complete.
+2026-02-16 00:33:20,414 | INFO | uvicorn.access | h11_impl.py:480 | 127.0.0.1:33814 - "OPTIONS /auth/login HTTP/1.1" 200
+2026-02-16 00:33:20,551 | INFO | auth.auth | auth.py:54 | Logging user in...
+2026-02-16 00:33:21,017 | INFO | auth.auth | auth.py:81 | Log in successful
+2026-02-16 00:33:21,018 | INFO | uvicorn.access | h11_impl.py:480 | 127.0.0.1:33814 - "POST /auth/login HTTP/1.1" 200
+2026-02-16 00:33:21,024 | INFO | uvicorn.access | h11_impl.py:480 | 127.0.0.1:33814 - "OPTIONS /auth/me HTTP/1.1" 200
+2026-02-16 00:33:21,075 | INFO | auth.services | services.py:57 | Current user fetched...
+2026-02-16 00:33:21,076 | INFO | uvicorn.access | h11_impl.py:480 | 127.0.0.1:33814 - "GET /auth/me HTTP/1.1" 200
+2026-02-16 00:33:21,167 | INFO | uvicorn.access | h11_impl.py:480 | 127.0.0.1:33814 - "OPTIONS /tasks/?skip=0&limit=10 HTTP/1.1" 200
+2026-02-16 00:33:21,172 | INFO | uvicorn.access | h11_impl.py:480 | 127.0.0.1:33830 - "OPTIONS /tasks/?skip=0&limit=10 HTTP/1.1" 200
+2026-02-16 00:33:21,174 | INFO | auth.services | services.py:57 | Current user fetched...
+2026-02-16 00:33:21,175 | INFO | routes.task | task.py:25 | Getting task
+2026-02-16 00:33:21,184 | INFO | uvicorn.access | h11_impl.py:480 | 127.0.0.1:33814 - "GET /tasks/?skip=0&limit=10 HTTP/1.1" 200
+2026-02-16 00:33:21,192 | INFO | auth.services | services.py:57 | Current user fetched...
+2026-02-16 00:33:21,193 | INFO | routes.task | task.py:25 | Getting task
+2026-02-16 00:33:21,197 | INFO | uvicorn.access | h11_impl.py:480 | 127.0.0.1:33830 - "GET /tasks/?skip=0&limit=10 HTTP/1.1" 200
+2026-02-16 00:33:24,401 | INFO | uvicorn.access | h11_impl.py:480 | 127.0.0.1:33814 - "OPTIONS /tasks/all HTTP/1.1" 200
+2026-02-16 00:33:24,402 | INFO | uvicorn.access | h11_impl.py:480 | 127.0.0.1:33830 - "OPTIONS /tasks/all HTTP/1.1" 200
+2026-02-16 00:33:24,406 | INFO | auth.services | services.py:57 | Current user fetched...
+2026-02-16 00:33:24,407 | INFO | routes.task | task.py:31 | Getting all tasks
+2026-02-16 00:33:24,409 | INFO | auth.services | services.py:57 | Current user fetched...
+2026-02-16 00:33:24,409 | INFO | routes.task | task.py:31 | Getting all tasks
+2026-02-16 00:33:24,411 | INFO | uvicorn.access | h11_impl.py:480 | 127.0.0.1:33830 - "GET /tasks/all HTTP/1.1" 200
+2026-02-16 00:33:24,412 | INFO | uvicorn.access | h11_impl.py:480 | 127.0.0.1:33814 - "GET /tasks/all HTTP/1.1" 200
+2026-02-16 00:33:26,676 | INFO | auth.services | services.py:57 | Current user fetched...
+2026-02-16 00:33:26,676 | INFO | routes.task | task.py:25 | Getting task
+2026-02-16 00:33:26,677 | INFO | auth.services | services.py:57 | Current user fetched...
+2026-02-16 00:33:26,678 | INFO | routes.task | task.py:25 | Getting task
+2026-02-16 00:33:26,679 | INFO | uvicorn.access | h11_impl.py:480 | 127.0.0.1:33814 - "GET /tasks/?skip=0&limit=10 HTTP/1.1" 200
+2026-02-16 00:33:26,680 | INFO | uvicorn.access | h11_impl.py:480 | 127.0.0.1:33830 - "GET /tasks/?skip=0&limit=10 HTTP/1.1" 200
+2026-02-16 00:34:27,475 | INFO | uvicorn.access | h11_impl.py:480 | 127.0.0.1:40838 - "OPTIONS /tasks/ HTTP/1.1" 200
+2026-02-16 00:34:27,479 | INFO | auth.services | services.py:57 | Current user fetched...
+2026-02-16 00:34:27,480 | INFO | routes.task | task.py:19 | Creating task
+2026-02-16 00:34:27,480 | INFO | task.service | service.py:22 | Creating task
+2026-02-16 00:34:27,495 | INFO | task.service | service.py:26 | Task Created
+2026-02-16 00:34:27,496 | INFO | uvicorn.access | h11_impl.py:480 | 127.0.0.1:40838 - "POST /tasks/ HTTP/1.1" 200
+2026-02-16 00:34:27,546 | INFO | auth.services | services.py:57 | Current user fetched...
+2026-02-16 00:34:27,546 | INFO | routes.task | task.py:25 | Getting task
+2026-02-16 00:34:27,548 | INFO | uvicorn.access | h11_impl.py:480 | 127.0.0.1:40838 - "GET /tasks/?skip=0&limit=10 HTTP/1.1" 200
+2026-02-16 00:34:32,773 | INFO | uvicorn.access | h11_impl.py:480 | 127.0.0.1:33676 - "OPTIONS /auth/logout HTTP/1.1" 200
+2026-02-16 00:34:32,787 | INFO | auth.auth | auth.py:151 | user logged out
+2026-02-16 00:34:32,787 | INFO | uvicorn.access | h11_impl.py:480 | 127.0.0.1:33676 - "POST /auth/logout HTTP/1.1" 200
+2026-02-16 00:34:41,334 | INFO | auth.auth | auth.py:54 | Logging user in...
+2026-02-16 00:34:41,732 | ERROR | auth.auth | auth.py:65 | Invalid creds
+2026-02-16 00:34:41,734 | INFO | uvicorn.access | h11_impl.py:480 | 127.0.0.1:52262 - "POST /auth/login HTTP/1.1" 401
+2026-02-16 00:34:56,660 | INFO | auth.auth | auth.py:54 | Logging user in...
+2026-02-16 00:34:57,069 | INFO | auth.auth | auth.py:81 | Log in successful
+2026-02-16 00:34:57,070 | INFO | uvicorn.access | h11_impl.py:480 | 127.0.0.1:44068 - "POST /auth/login HTTP/1.1" 200
+2026-02-16 00:34:57,078 | INFO | auth.services | services.py:57 | Current user fetched...
+2026-02-16 00:34:57,079 | INFO | uvicorn.access | h11_impl.py:480 | 127.0.0.1:44068 - "GET /auth/me HTTP/1.1" 200
+2026-02-16 00:34:57,161 | INFO | auth.services | services.py:57 | Current user fetched...
+2026-02-16 00:34:57,162 | INFO | routes.task | task.py:25 | Getting task
+2026-02-16 00:34:57,163 | INFO | uvicorn.access | h11_impl.py:480 | 127.0.0.1:44068 - "GET /tasks/?skip=0&limit=10 HTTP/1.1" 200
+2026-02-16 00:34:57,164 | INFO | auth.services | services.py:57 | Current user fetched...
+2026-02-16 00:34:57,164 | INFO | routes.task | task.py:25 | Getting task
+2026-02-16 00:34:57,165 | INFO | uvicorn.access | h11_impl.py:480 | 127.0.0.1:44080 - "GET /tasks/?skip=0&limit=10 HTTP/1.1" 200
+2026-02-16 00:35:05,905 | INFO | auth.services | services.py:57 | Current user fetched...
+2026-02-16 00:35:05,905 | INFO | routes.task | task.py:19 | Creating task
+2026-02-16 00:35:05,905 | INFO | task.service | service.py:22 | Creating task
+2026-02-16 00:35:05,916 | INFO | task.service | service.py:26 | Task Created
+2026-02-16 00:35:05,916 | INFO | uvicorn.access | h11_impl.py:480 | 127.0.0.1:39160 - "POST /tasks/ HTTP/1.1" 200
+2026-02-16 00:35:05,927 | INFO | auth.services | services.py:57 | Current user fetched...
+2026-02-16 00:35:05,928 | INFO | routes.task | task.py:25 | Getting task
+2026-02-16 00:35:05,930 | INFO | uvicorn.access | h11_impl.py:480 | 127.0.0.1:39160 - "GET /tasks/?skip=0&limit=10 HTTP/1.1" 200
+2026-02-16 00:36:00,382 | INFO | uvicorn.error | server.py:264 | Shutting down
+2026-02-16 00:36:00,482 | INFO | uvicorn.error | on.py:67 | Waiting for application shutdown.
+2026-02-16 00:36:00,483 | INFO | main | main.py:31 | Application startup complete.
+2026-02-16 00:36:00,483 | INFO | uvicorn.error | on.py:76 | Application shutdown complete.
+2026-02-16 00:36:00,484 | INFO | uvicorn.error | server.py:94 | Finished server process [578768]
