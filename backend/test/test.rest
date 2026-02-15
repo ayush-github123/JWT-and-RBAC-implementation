@@ -1,0 +1,92 @@
+
+@access_token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2ZjhlZWRlYy1hZGRjLTQyZGMtYWNiMy03MDI5NTY0MWQwZGQiLCJyb2xlIjoiVVNFUiIsImV4cCI6MTc3MTE1OTgyNiwiaWF0IjoxNzcxMTU4OTI2LCJqdGkiOiI0ZWQzMzljOS02MTgyLTQxN2EtYmU4Zi00NzU4YzliNTFiN2EiLCJ0eXBlIjoiYWNjZXNzIn0.bOwtzmVJ__TSLBK9YROYUUiEwjYl3B8WXGV7ZZ9EeJk
+
+@refresh_token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2ZjhlZWRlYy1hZGRjLTQyZGMtYWNiMy03MDI5NTY0MWQwZGQiLCJleHAiOjE3NzE3NjM3MjYsImlhdCI6MTc3MTE1ODkyNiwianRpIjoiNzEwZTllNjMtZjlkZi00MDFiLWEwYzctNjI3ZWFjZjM5NTk4IiwidHlwZSI6InJlZnJlc2gifQ.v5s-5ibTvX149Nba6HFHTwm_0n2QkCVsO6wiv9DVwTs
+
+
+@base_url = http://127.0.0.1:8000
+
+### Health Check
+
+GET {{base_url}}/health
+
+### Register User
+POST {{base_url}}/auth/register
+Content-Type: application/json
+
+{
+    "username": "ayush",
+    "email": "abcd@gmail.com",
+    "role": "USER",
+    "password": "ayush1234"
+}
+
+### Login
+POST {{base_url}}/auth/login
+Content-Type: application/json
+
+{
+    "email": "abcd@gmail.com",
+    "password": "ayush1234"
+}
+
+
+### Create Task (Authenticated)
+POST {{base_url}}/tasks/
+Content-Type: application/json
+Authorization: Bearer {{access_token}}
+
+{
+    "title": "Build production backend",
+    "description": "Implement JWT + RBAC properly"
+}
+
+
+@task_id = 494c5a64-e1f0-46e9-9c45-beff09907d43
+
+
+### List My Tasks
+GET {{base_url}}/tasks/?skip=0&limit=10
+Authorization: Bearer {{access_token}}
+
+
+### List ALL Tasks(Only by ADMIN)
+GET {{base_url}}/tasks/all
+Authorization: Bearer {{access_token}}
+
+
+### Update Task (Replace TASK_ID manually)
+PUT {{base_url}}/tasks/{{task_id}}
+Content-Type: application/json
+Authorization: Bearer {{access_token}}
+
+{
+    "title": "Updated Title",
+    "is_completed": true
+}
+
+
+
+### Delete Task (Replace TASK_ID manually)
+DELETE {{base_url}}/tasks/{{task_id}}
+Authorization: Bearer {{access_token}}
+
+
+
+### Refresh Tokens
+POST {{base_url}}/auth/refresh
+Content-Type: application/json
+# Authorization: Bearer {{access_token}}
+
+{
+    "refresh_token": "{{refresh_token}}"
+}
+
+
+### Logout (Revoke Refresh Token)
+POST {{base_url}}/auth/logout
+Content-Type: application/json
+
+{
+    "refresh_token": "{{refresh_token}}"
+}
