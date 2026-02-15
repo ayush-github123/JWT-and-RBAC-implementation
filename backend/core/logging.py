@@ -1,15 +1,22 @@
 import logging
-import sys
+import os
 from logging.config import dictConfig
+from logging.handlers import RotatingFileHandler
 from typing import Optional
+
+
+LOG_DIR = "logs"
+LOG_FILE = "app.log"
 
 
 def setup_logging(level: Optional[str] = "INFO") -> None:
     """
     Configure application-wide logging.
-    Supports structured logging and can be extended
-    for JSON logs in production.
+    Logs to both console and file with rotation support.
     """
+
+    os.makedirs(LOG_DIR, exist_ok=True)
+    log_path = os.path.join(LOG_DIR, LOG_FILE)
 
     log_level = level.upper()
 
@@ -30,26 +37,37 @@ def setup_logging(level: Optional[str] = "INFO") -> None:
             "handlers": {
                 "console": {
                     "class": "logging.StreamHandler",
-                    "stream": sys.stdout,
                     "formatter": "default",
+                },
+                "file": {
+                    "class": "logging.handlers.RotatingFileHandler",
+                    "filename": log_path,
+                    "maxBytes": 5 * 1024 * 1024,  # 5MB
+                    "backupCount": 5,
+                    "formatter": "detailed",
+                    "encoding": "utf-8",
                 },
             },
 
             "loggers": {
-                "": {  # root logger
-                    "handlers": ["console"],
+                "": {
+                    "handlers": ["console", "file"],
                     "level": log_level,
                 },
                 "uvicorn": {
-                    "handlers": ["console"],
+                    "handlers": ["console", "file"],
                     "level": log_level,
                     "propagate": False,
                 },
                 "uvicorn.error": {
+                    "handlers": ["console", "file"],
                     "level": log_level,
+                    "propagate": False,
                 },
                 "uvicorn.access": {
+                    "handlers": ["console", "file"],
                     "level": log_level,
+                    "propagate": False,
                 },
             },
         }
